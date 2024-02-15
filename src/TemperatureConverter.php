@@ -16,4 +16,12 @@ class TemperatureConverter
         }
         
     }
+
+    public function convertCelsiusToFahrenheit($temperature) {
+        return $this->convert($temperature, 'C');
+    }
+
+    public function convertFahrenheitToCelsius($temperature) {
+        return $this->convert($temperature, 'F');
+    }
 }

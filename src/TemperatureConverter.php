@@ -24,4 +24,29 @@ class TemperatureConverter
     public function convertFahrenheitToCelsius($temperature) {
         return $this->convert($temperature, 'F');
     }
+
+    public function convertCelsiusToKelvin($temperature) {
+        return $temperature + 273.15;
+    }
+
+    public function convertKelvinToCelsius($temperature) {
+        return $temperature - 273.15;
+    }
+
+    public function convertFahrenheitToKelvin($temperature) {
+        return $this->convertCelsiusToKelvin($this->convertFahrenheitToCelsius($temperature));
+    }
+
+    public function convertKelvinToFahrenheit($temperature) {
+        return $this->convertCelsiusToFahrenheit($this->convertKelvinToCelsius($temperature));
+    }
+
+    public function convertMilesToKilometers($miles) {
+        return $miles * 1.60934;
+    }
+
+    public function convertKilometersToMiles($kilometers) {
+        return $kilometers / 1.60934;
+    }
+    
 }
